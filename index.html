@@ -19,22 +19,82 @@
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80">
   <style>
     :root {
+      --bg-main:
+        radial-gradient(circle at top left, rgba(31, 94, 255, 0.12), transparent 30%),
+        radial-gradient(circle at top right, rgba(25, 169, 116, 0.12), transparent 28%),
+        linear-gradient(180deg, #f4f8ff 0%, #eef6ff 100%);
       --panel: #ffffff;
-      --panel-soft: #f8faff;
+      --panel-soft: #f5f9ff;
       --text: #1b1b1b;
       --muted: #555555;
-      --line: #e4e4e4;
+      --line: #dce6f5;
       --accent: #1f5eff;
       --accent-dark: #1748c7;
       --accent-soft: #eef4ff;
       --accent-soft-2: #e8fff6;
       --highlight: #19a974;
       --heading: #14213d;
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      --shadow: 0 12px 32px rgba(19, 42, 88, 0.08);
+      --hero-bg: linear-gradient(180deg, rgba(231, 241, 255, 0.96) 0%, rgba(255, 255, 255, 0.98) 56%);
+      --card-bg: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
+      --step-bg: linear-gradient(180deg, #ffffff 0%, #f3f8ff 100%);
+      --contact-bg: linear-gradient(180deg, #f3f8ff 0%, #ffffff 100%);
+      --topbar-bg: rgba(255, 255, 255, 0.94);
       --radius-lg: 20px;
       --radius-md: 14px;
       --radius-sm: 10px;
       --max: 980px;
+    }
+
+    :root[data-theme="dark"] {
+      --bg-main:
+        radial-gradient(circle at top left, rgba(31, 94, 255, 0.22), transparent 30%),
+        radial-gradient(circle at top right, rgba(25, 169, 116, 0.18), transparent 28%),
+        linear-gradient(180deg, #0b1220 0%, #10192b 100%);
+      --panel: #121c2f;
+      --panel-soft: #16243a;
+      --text: #e7edf7;
+      --muted: #b6c2d5;
+      --line: #223554;
+      --accent: #5f8cff;
+      --accent-dark: #8db0ff;
+      --accent-soft: #162a52;
+      --accent-soft-2: #12352e;
+      --highlight: #3dd39a;
+      --heading: #f4f8ff;
+      --shadow: 0 16px 36px rgba(0, 0, 0, 0.32);
+      --hero-bg: linear-gradient(180deg, rgba(22, 42, 82, 0.92) 0%, rgba(18, 28, 47, 0.98) 56%);
+      --card-bg: linear-gradient(180deg, #142033 0%, #111a2c 100%);
+      --step-bg: linear-gradient(180deg, #15233a 0%, #10192b 100%);
+      --contact-bg: linear-gradient(180deg, #14223a 0%, #121c2f 100%);
+      --topbar-bg: rgba(14, 22, 36, 0.92);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme]),
+      :root[data-theme="auto"] {
+        --bg-main:
+          radial-gradient(circle at top left, rgba(31, 94, 255, 0.22), transparent 30%),
+          radial-gradient(circle at top right, rgba(25, 169, 116, 0.18), transparent 28%),
+          linear-gradient(180deg, #0b1220 0%, #10192b 100%);
+        --panel: #121c2f;
+        --panel-soft: #16243a;
+        --text: #e7edf7;
+        --muted: #b6c2d5;
+        --line: #223554;
+        --accent: #5f8cff;
+        --accent-dark: #8db0ff;
+        --accent-soft: #162a52;
+        --accent-soft-2: #12352e;
+        --highlight: #3dd39a;
+        --heading: #f4f8ff;
+        --shadow: 0 16px 36px rgba(0, 0, 0, 0.32);
+        --hero-bg: linear-gradient(180deg, rgba(22, 42, 82, 0.92) 0%, rgba(18, 28, 47, 0.98) 56%);
+        --card-bg: linear-gradient(180deg, #142033 0%, #111a2c 100%);
+        --step-bg: linear-gradient(180deg, #15233a 0%, #10192b 100%);
+        --contact-bg: linear-gradient(180deg, #14223a 0%, #121c2f 100%);
+        --topbar-bg: rgba(14, 22, 36, 0.92);
+      }
     }
 
     * {
@@ -49,12 +109,10 @@
       margin: 0;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(31, 94, 255, 0.08), transparent 30%),
-        radial-gradient(circle at top right, rgba(25, 169, 116, 0.08), transparent 28%),
-        #f3f6fb;
+      background: var(--bg-main);
       line-height: 1.6;
       font-weight: 500;
+      transition: background 180ms ease, color 180ms ease;
     }
 
     img {
@@ -86,7 +144,7 @@
       padding: 0.8rem 1rem;
       border: 1px solid var(--line);
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.94);
+      background: var(--topbar-bg);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
     }
 
@@ -126,6 +184,14 @@
       font-weight: 600;
     }
 
+    .topbar-actions {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
     .nav {
       position: relative;
       z-index: 1;
@@ -141,6 +207,25 @@
     .nav a:hover,
     .nav a:focus-visible {
       color: var(--accent-dark);
+    }
+
+    .theme-toggle {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, var(--panel-soft) 0%, var(--panel) 100%);
+      color: var(--heading);
+      border-radius: 999px;
+      padding: 0.55rem 0.85rem;
+      font: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .theme-toggle:hover,
+    .theme-toggle:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(31, 94, 255, 0.4);
     }
 
     .hero {
@@ -162,8 +247,7 @@
     .hero-copy {
       padding: clamp(1.25rem, 3vw, 2rem);
       border-radius: var(--radius-lg);
-      background:
-        linear-gradient(180deg, rgba(238, 244, 255, 0.9) 0%, rgba(255, 255, 255, 0.98) 52%);
+      background: var(--hero-bg);
     }
 
     .eyebrow {
@@ -211,7 +295,7 @@
     .intro-item {
       padding: 0.85rem;
       border-radius: var(--radius-sm);
-      background: linear-gradient(180deg, var(--panel-soft) 0%, #ffffff 100%);
+      background: linear-gradient(180deg, var(--panel-soft) 0%, var(--panel) 100%);
       border: 1px solid var(--line);
     }
 
@@ -247,7 +331,7 @@
     }
 
     .button-secondary {
-      background: #f9fbff;
+      background: linear-gradient(180deg, var(--panel-soft) 0%, var(--panel) 100%);
       color: var(--text);
       border: 1px solid var(--line);
     }
@@ -316,26 +400,26 @@
     .about-card {
       padding: 0.95rem;
       border-radius: var(--radius-md);
-      background: linear-gradient(180deg, #ffffff 0%, #fcfdff 100%);
+      background: var(--card-bg);
       border: 1px solid var(--line);
     }
 
     .service-card:nth-child(3n + 1),
     .why-card:nth-child(3n + 1),
     .example-card:nth-child(3n + 1) {
-      border-top: 3px solid rgba(31, 94, 255, 0.4);
+      border-top: 3px solid rgba(31, 94, 255, 0.55);
     }
 
     .service-card:nth-child(3n + 2),
     .why-card:nth-child(3n + 2),
     .example-card:nth-child(3n + 2) {
-      border-top: 3px solid rgba(25, 169, 116, 0.35);
+      border-top: 3px solid rgba(25, 169, 116, 0.5);
     }
 
     .service-card:nth-child(3n),
     .why-card:nth-child(3n),
     .example-card:nth-child(3n) {
-      border-top: 3px solid rgba(20, 33, 61, 0.22);
+      border-top: 3px solid rgba(20, 33, 61, 0.35);
     }
 
     .why-card {
@@ -406,7 +490,7 @@
     .step {
       padding: 1rem;
       border-radius: var(--radius-md);
-      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      background: var(--step-bg);
       border: 1px solid var(--line);
     }
 
@@ -435,14 +519,39 @@
     }
 
     .help-list {
-      margin: 0.75rem 0 0;
-      padding-left: 1.1rem;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.65rem;
+      margin: 0.9rem 0 0;
+      padding: 0;
       color: var(--muted);
-      font-weight: 550;
+      font-weight: 600;
     }
 
-    .help-list li + li {
-      margin-top: 0.35rem;
+    .help-list li {
+      padding: 0.7rem 0.8rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: linear-gradient(180deg, var(--panel-soft) 0%, var(--panel) 100%);
+      color: var(--heading);
+    }
+
+    .help-list li::before {
+      content: "• ";
+      color: var(--highlight);
+      font-weight: 800;
+    }
+
+    .help-note {
+      margin-top: 0.9rem;
+      padding: 0.85rem 0.9rem;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(90deg, rgba(31, 94, 255, 0.12), rgba(25, 169, 116, 0.12));
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-weight: 600;
     }
 
     .contact-stack {
@@ -454,7 +563,7 @@
       padding: 0.9rem;
       border-radius: var(--radius-md);
       border: 1px solid var(--line);
-      background: linear-gradient(180deg, var(--panel-soft) 0%, #ffffff 100%);
+      background: var(--contact-bg);
     }
 
     .contact-box strong {
@@ -516,6 +625,12 @@
         margin-bottom: 0.35rem;
       }
 
+      .topbar-actions {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
       .nav {
         flex-direction: column;
         align-items: flex-start;
@@ -531,10 +646,15 @@
         padding: 0.2rem 0;
       }
 
+      .theme-toggle {
+        width: 100%;
+      }
+
       .services-grid,
       .examples-grid,
       .steps,
-      .intro-box {
+      .intro-box,
+      .help-list {
         grid-template-columns: 1fr;
       }
 
@@ -555,12 +675,15 @@
         <strong>CortexBuilds</strong>
         <span>Local computer help from Joliet Junior College students</span>
       </div>
-      <nav class="nav" aria-label="Main navigation">
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#process">How It Works</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <div class="topbar-actions">
+        <nav class="nav" aria-label="Main navigation">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#process">How It Works</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-live="polite">Theme: Auto</button>
+      </div>
     </header>
 
     <main>
@@ -794,6 +917,9 @@
               <li>File transfers</li>
               <li>New device setup</li>
             </ul>
+            <div class="help-note">
+              Not sure which service fits your issue? Send us a message and we can help you figure out the next step.
+            </div>
           </div>
         </div>
       </section>
@@ -803,5 +929,54 @@
       Placeholder one-page site for Jayden's PC consulting business.
     </footer>
   </div>
+  <script>
+    (function () {
+      var storageKey = "cortexbuilds-theme";
+      var themes = ["auto", "light", "dark"];
+      var root = document.documentElement;
+      var toggle = document.getElementById("themeToggle");
+      var mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+      function applyTheme(theme) {
+        if (theme === "auto") {
+          root.setAttribute("data-theme", "auto");
+        } else {
+          root.setAttribute("data-theme", theme);
+        }
+
+        if (toggle) {
+          var label = theme.charAt(0).toUpperCase() + theme.slice(1);
+          toggle.textContent = "Theme: " + label;
+          toggle.setAttribute("aria-label", "Theme: " + label);
+        }
+      }
+
+      function getSavedTheme() {
+        var saved = localStorage.getItem(storageKey);
+        return themes.indexOf(saved) >= 0 ? saved : "auto";
+      }
+
+      function setTheme(theme) {
+        localStorage.setItem(storageKey, theme);
+        applyTheme(theme);
+      }
+
+      applyTheme(getSavedTheme());
+
+      if (toggle) {
+        toggle.addEventListener("click", function () {
+          var current = getSavedTheme();
+          var next = themes[(themes.indexOf(current) + 1) % themes.length];
+          setTheme(next);
+        });
+      }
+
+      mediaQuery.addEventListener("change", function () {
+        if (getSavedTheme() === "auto") {
+          applyTheme("auto");
+        }
+      });
+    }());
+  </script>
 </body>
 </html>
