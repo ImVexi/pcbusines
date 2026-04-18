@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cortex Builds</title>
+  <title>Cortex Builds — Local PC Help, Joliet</title>
   <meta name="description" content="Local PC help for Joliet, Shorewood, and Minooka. Repairs, upgrades, Wi-Fi help, custom builds, virus cleanup, and device setup from Joliet Junior College students.">
-  <meta name="theme-color" content="#1f5eff">
+  <meta name="theme-color" content="#1C1916">
   <meta property="og:type" content="website">
   <meta property="og:title" content="CortexBuilds">
   <meta property="og:description" content="Local PC help for Joliet, Shorewood, and Minooka. Repairs, upgrades, Wi-Fi help, custom builds, virus cleanup, and device setup.">
@@ -17,974 +17,856 @@
   <meta name="twitter:title" content="CortexBuilds">
   <meta name="twitter:description" content="Local PC help for Joliet, Shorewood, and Minooka. Repairs, upgrades, Wi-Fi help, custom builds, virus cleanup, and device setup.">
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg-main:
-        radial-gradient(circle at top left, rgba(31, 94, 255, 0.12), transparent 30%),
-        radial-gradient(circle at top right, rgba(25, 169, 116, 0.12), transparent 28%),
-        linear-gradient(180deg, #f4f8ff 0%, #eef6ff 100%);
-      --panel: #ffffff;
-      --panel-soft: #f5f9ff;
-      --text: #1b1b1b;
-      --muted: #555555;
-      --line: #dce6f5;
-      --accent: #1f5eff;
-      --accent-dark: #1748c7;
-      --accent-soft: #eef4ff;
-      --accent-soft-2: #e8fff6;
-      --highlight: #19a974;
-      --heading: #14213d;
-      --shadow: 0 12px 32px rgba(19, 42, 88, 0.08);
-      --hero-bg: linear-gradient(180deg, rgba(231, 241, 255, 0.96) 0%, rgba(255, 255, 255, 0.98) 56%);
-      --card-bg: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
-      --step-bg: linear-gradient(180deg, #ffffff 0%, #f3f8ff 100%);
-      --contact-bg: linear-gradient(180deg, #f3f8ff 0%, #ffffff 100%);
-      --topbar-bg: rgba(255, 255, 255, 0.94);
-      --radius-lg: 20px;
-      --radius-md: 14px;
-      --radius-sm: 10px;
-      --max: 980px;
+      --bg:       #F6F2E9;
+      --bg-alt:   #EDE8DC;
+      --text:     #1C1916;
+      --muted:    #6B6459;
+      --accent:   #C94A28;
+      --line:     #D5CFC3;
+      --nav-bg:   #1C1916;
+      --nav-text: #F6F2E9;
+      --max:      1020px;
     }
 
-    :root[data-theme="dark"] {
-      --bg-main:
-        radial-gradient(circle at top left, rgba(31, 94, 255, 0.22), transparent 30%),
-        radial-gradient(circle at top right, rgba(25, 169, 116, 0.18), transparent 28%),
-        linear-gradient(180deg, #0b1220 0%, #10192b 100%);
-      --panel: #121c2f;
-      --panel-soft: #16243a;
-      --text: #e7edf7;
-      --muted: #b6c2d5;
-      --line: #223554;
-      --accent: #5f8cff;
-      --accent-dark: #8db0ff;
-      --accent-soft: #162a52;
-      --accent-soft-2: #12352e;
-      --highlight: #3dd39a;
-      --heading: #f4f8ff;
-      --shadow: 0 16px 36px rgba(0, 0, 0, 0.32);
-      --hero-bg: linear-gradient(180deg, rgba(22, 42, 82, 0.92) 0%, rgba(18, 28, 47, 0.98) 56%);
-      --card-bg: linear-gradient(180deg, #142033 0%, #111a2c 100%);
-      --step-bg: linear-gradient(180deg, #15233a 0%, #10192b 100%);
-      --contact-bg: linear-gradient(180deg, #14223a 0%, #121c2f 100%);
-      --topbar-bg: rgba(14, 22, 36, 0.92);
+    [data-theme="dark"] {
+      --bg:       #141210;
+      --bg-alt:   #1C1916;
+      --text:     #EDE8DC;
+      --muted:    #8A837A;
+      --accent:   #E06040;
+      --line:     #2C2822;
+      --nav-bg:   #0E0C0A;
+      --nav-text: #EDE8DC;
     }
 
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme]),
       :root[data-theme="auto"] {
-        --bg-main:
-          radial-gradient(circle at top left, rgba(31, 94, 255, 0.22), transparent 30%),
-          radial-gradient(circle at top right, rgba(25, 169, 116, 0.18), transparent 28%),
-          linear-gradient(180deg, #0b1220 0%, #10192b 100%);
-        --panel: #121c2f;
-        --panel-soft: #16243a;
-        --text: #e7edf7;
-        --muted: #b6c2d5;
-        --line: #223554;
-        --accent: #5f8cff;
-        --accent-dark: #8db0ff;
-        --accent-soft: #162a52;
-        --accent-soft-2: #12352e;
-        --highlight: #3dd39a;
-        --heading: #f4f8ff;
-        --shadow: 0 16px 36px rgba(0, 0, 0, 0.32);
-        --hero-bg: linear-gradient(180deg, rgba(22, 42, 82, 0.92) 0%, rgba(18, 28, 47, 0.98) 56%);
-        --card-bg: linear-gradient(180deg, #142033 0%, #111a2c 100%);
-        --step-bg: linear-gradient(180deg, #15233a 0%, #10192b 100%);
-        --contact-bg: linear-gradient(180deg, #14223a 0%, #121c2f 100%);
-        --topbar-bg: rgba(14, 22, 36, 0.92);
+        --bg:       #141210;
+        --bg-alt:   #1C1916;
+        --text:     #EDE8DC;
+        --muted:    #8A837A;
+        --accent:   #E06040;
+        --line:     #2C2822;
+        --nav-bg:   #0E0C0A;
+        --nav-text: #EDE8DC;
       }
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
-      margin: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg);
       color: var(--text);
-      background: var(--bg-main);
       line-height: 1.6;
-      font-weight: 500;
-      transition: background 180ms ease, color 180ms ease;
+      font-size: 1rem;
+      -webkit-font-smoothing: antialiased;
     }
 
-    img {
-      display: block;
-      width: 100%;
-      border-radius: var(--radius-md);
-      object-fit: cover;
+    h1, h2, h3 {
+      font-family: 'Syne', sans-serif;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    a { color: inherit; text-decoration: none; }
+
+    img { display: block; width: 100%; }
+
+    /* ─── NAV ─────────────────────────────────────── */
+    .site-nav {
+      background: var(--nav-bg);
+      color: var(--nav-text);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
-    .page-shell {
-      width: min(var(--max), calc(100% - 2rem));
+    .nav-inner {
+      max-width: var(--max);
       margin: 0 auto;
-      padding: 0.75rem 0 2rem;
-    }
-
-    .topbar {
-      position: relative;
-      z-index: 20;
+      padding: 0 2rem;
+      height: 56px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
-      margin: 0.5rem 0 1rem;
-      padding: 0.8rem 1rem;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: var(--topbar-bg);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-    }
-
-    .topbar::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      padding: 1px;
-      background: linear-gradient(90deg, rgba(31, 94, 255, 0.35), rgba(25, 169, 116, 0.25));
-      -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
     }
 
     .brand {
-      position: relative;
-      z-index: 1;
       display: flex;
       flex-direction: column;
-      gap: 0.1rem;
+      gap: 1px;
     }
 
-    .brand strong {
-      font-size: 1.05rem;
-      font-weight: 700;
-      letter-spacing: 0;
-      text-transform: none;
+    .brand-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: -0.01em;
     }
 
-    .brand span {
-      color: var(--muted);
-      font-size: 0.9rem;
-      font-weight: 600;
+    .brand-sub {
+      font-size: 0.7rem;
+      opacity: 0.4;
+      font-weight: 400;
     }
 
-    .topbar-actions {
-      position: relative;
-      z-index: 1;
+    .nav-links {
       display: flex;
-      align-items: center;
-      gap: 0.8rem;
+      gap: 2rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      opacity: 0.55;
     }
 
-    .nav {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 0.9rem;
-      color: var(--muted);
-      font-size: 0.95rem;
+    .nav-links a:hover { opacity: 1; color: var(--nav-text); }
+
+    .theme-btn {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.15);
+      color: var(--nav-text);
+      font-family: inherit;
+      font-size: 0.72rem;
+      font-weight: 500;
+      padding: 0.3rem 0.7rem;
+      cursor: pointer;
+      border-radius: 3px;
+      opacity: 0.5;
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+
+    .theme-btn:hover { opacity: 1; }
+
+    /* ─── LAYOUT ──────────────────────────────────── */
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ─── HERO ────────────────────────────────────── */
+    .hero {
+      padding: 5rem 0 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-label {
+      font-size: 0.72rem;
       font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
     }
 
-    .nav a:hover,
-    .nav a:focus-visible {
-      color: var(--accent-dark);
+    .hero h1 {
+      font-size: clamp(2.6rem, 6vw, 4.8rem);
+      font-weight: 800;
+      max-width: 14ch;
+      margin-bottom: 0;
     }
 
-    .theme-toggle {
+    .hero-lower {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      margin-top: 3.5rem;
+    }
+
+    .hero-desc {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       border: 1px solid var(--line);
-      background: linear-gradient(180deg, var(--panel-soft) 0%, var(--panel) 100%);
-      color: var(--heading);
-      border-radius: 999px;
-      padding: 0.55rem 0.85rem;
-      font: inherit;
+    }
+
+    .hero-meta-item {
+      padding: 1.1rem 1.25rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-meta-item:nth-child(odd) { border-right: 1px solid var(--line); }
+
+    .hero-meta-item:nth-last-child(-n+2) { border-bottom: none; }
+
+    .hero-meta-item strong {
+      display: block;
+      font-family: 'Syne', sans-serif;
       font-size: 0.88rem;
       font-weight: 700;
-      cursor: pointer;
-      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+      margin-bottom: 0.2rem;
     }
 
-    .theme-toggle:hover,
-    .theme-toggle:focus-visible {
-      transform: translateY(-1px);
-      border-color: rgba(31, 94, 255, 0.4);
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 1rem;
-      align-items: stretch;
-      margin-bottom: 1.25rem;
-    }
-
-    .hero-copy,
-    .hero-card,
-    section {
-      border: 1px solid var(--line);
-      background: var(--panel);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-copy {
-      padding: clamp(1.25rem, 3vw, 2rem);
-      border-radius: var(--radius-lg);
-      background: var(--hero-bg);
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      padding: 0.35rem 0.7rem;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent-dark);
+    .hero-meta-item span {
       font-size: 0.8rem;
-      font-weight: 600;
-    }
-
-    h1,
-    h2,
-    h3 {
-      font-weight: 800;
-      line-height: 1.15;
-      margin: 0;
-      color: var(--heading);
-    }
-
-    h1 {
-      margin-top: 0.9rem;
-      font-size: clamp(2rem, 5vw, 3.4rem);
-      max-width: 13ch;
-    }
-
-    .lead {
-      font-size: 1rem;
       color: var(--muted);
-      max-width: 60ch;
-      margin: 0.9rem 0 1rem;
-      font-weight: 550;
-    }
-
-    .intro-box {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 0.75rem;
-      margin: 1rem 0;
-    }
-
-    .intro-item {
-      padding: 1rem;
-      border-radius: var(--radius-sm);
-      background: linear-gradient(180deg, var(--panel-soft) 0%, var(--panel) 100%);
-      border: 1px solid var(--line);
-      color: var(--text);
-      font-size: 0.98rem;
-      line-height: 1.5;
-    }
-
-    .intro-item strong {
-      display: block;
-      margin-bottom: 0.45rem;
-      font-size: 1rem;
-      font-weight: 700;
-      line-height: 1.25;
     }
 
     .hero-actions {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1rem;
-    }
-
-    .button,
-    .button-secondary {
-      display: inline-flex;
+      gap: 1.25rem;
       align-items: center;
-      justify-content: center;
-      padding: 0.8rem 1rem;
-      border-radius: 999px;
-      font-weight: 700;
-      transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--line);
+      margin-top: 3.5rem;
     }
 
-    .button {
+    .btn {
+      display: inline-block;
       background: var(--accent);
-      color: #ffffff;
-      box-shadow: 0 10px 20px rgba(31, 94, 255, 0.18);
-    }
-
-    .button-secondary {
-      background: linear-gradient(180deg, var(--panel-soft) 0%, var(--panel) 100%);
-      color: var(--text);
-      border: 1px solid var(--line);
-    }
-
-    .button:hover,
-    .button-secondary:hover,
-    .button:focus-visible,
-    .button-secondary:focus-visible {
-      transform: translateY(-2px);
-    }
-
-    .hero-card {
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      padding: 0.8rem;
-    }
-
-    .hero-card img {
-      height: 100%;
-      min-height: 320px;
-    }
-
-    .grid-two {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-bottom: 1.25rem;
-    }
-
-    section {
-      padding: clamp(1.15rem, 2.5vw, 1.6rem);
-      border-radius: var(--radius-lg);
-      margin-bottom: 1.25rem;
-    }
-
-    .section-title {
-      display: block;
-      margin-bottom: 1rem;
-    }
-
-    .section-title p {
-      margin: 0.45rem 0 0;
-      color: var(--muted);
-      max-width: 42ch;
-      font-size: 0.96rem;
-      line-height: 1.45;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      font-family: inherit;
       font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 3px;
+      transition: opacity 0.15s;
     }
 
-    .services-grid,
-    .why-grid,
-    .examples-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.8rem;
-      align-items: start;
-    }
+    .btn:hover { opacity: 0.82; }
 
-    .why-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .service-card,
-    .why-card,
-    .example-card,
-    .contact-card,
-    .about-card {
-      padding: 0.95rem;
-      border-radius: var(--radius-md);
-      background: var(--card-bg);
-      border: 1px solid var(--line);
-    }
-
-    .service-card:nth-child(3n + 1),
-    .why-card:nth-child(3n + 1),
-    .example-card:nth-child(3n + 1) {
-      border-top: 3px solid rgba(31, 94, 255, 0.55);
-    }
-
-    .service-card:nth-child(3n + 2),
-    .why-card:nth-child(3n + 2),
-    .example-card:nth-child(3n + 2) {
-      border-top: 3px solid rgba(25, 169, 116, 0.5);
-    }
-
-    .service-card:nth-child(3n),
-    .why-card:nth-child(3n),
-    .example-card:nth-child(3n) {
-      border-top: 3px solid rgba(20, 33, 61, 0.35);
-    }
-
-    .why-card {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      min-height: 185px;
-    }
-
-    .service-card h3,
-    .why-card h3,
-    .example-card h3,
-    .contact-card h3,
-    .about-card h3 {
-      font-size: 1.15rem;
-      margin-bottom: 0.45rem;
-    }
-
-    .service-card p,
-    .why-card p,
-    .example-card p,
-    .contact-card p,
-    .about-card p,
-    .about-card li {
+    .btn-ghost {
+      font-size: 0.875rem;
       color: var(--muted);
-      margin: 0;
-      font-weight: 550;
+      font-weight: 500;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--line);
     }
 
-    .service-card span {
-      display: inline-flex;
-      margin-bottom: 0.65rem;
-      padding: 0.3rem 0.55rem;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent-dark);
-      font-size: 0.78rem;
+    .btn-ghost:hover { color: var(--text); text-decoration-color: var(--muted); }
+
+    /* ─── SECTION BASE ────────────────────────────── */
+    .section {
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-hd {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 2.75rem;
+    }
+
+    .section-n {
+      font-size: 0.68rem;
       font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      white-space: nowrap;
     }
 
-    .about-layout,
-    .contact-layout {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 1rem;
-    }
-
-    .about-photo {
-      min-height: 100%;
-    }
-
-    .about-photo img {
-      height: 100%;
-      min-height: 260px;
-    }
-
-    ul.clean {
-      padding-left: 1.1rem;
-      margin: 0.85rem 0 0;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    .step {
-      padding: 1rem;
-      border-radius: var(--radius-md);
-      background: var(--step-bg);
-      border: 1px solid var(--line);
-    }
-
-    .step-number {
-      display: inline-flex;
-      width: 2rem;
-      height: 2rem;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 0.8rem;
-      border-radius: 50%;
-      background: var(--accent);
-      color: white;
-      font-weight: 600;
-    }
-
-    .contact-layout {
-      align-items: stretch;
-    }
-
-    .contact-layout .contact-card:last-child {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-height: 100%;
-    }
-
-    .help-list {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.65rem;
-      margin: 0.9rem 0 0;
-      padding: 0;
-      color: var(--muted);
-      font-weight: 600;
-    }
-
-    .help-list li {
-      padding: 0.7rem 0.8rem;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-sm);
-      background: linear-gradient(180deg, var(--panel-soft) 0%, var(--panel) 100%);
-      color: var(--heading);
-    }
-
-    .help-list li::before {
-      content: "• ";
-      color: var(--highlight);
+    .section-hd h2 {
+      font-size: 1.85rem;
       font-weight: 800;
     }
 
-    .help-note {
-      margin-top: 0.9rem;
-      padding: 0.85rem 0.9rem;
-      border-radius: var(--radius-sm);
-      background: linear-gradient(90deg, rgba(31, 94, 255, 0.12), rgba(25, 169, 116, 0.12));
-      border: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 0.94rem;
-      font-weight: 600;
+    /* ─── SERVICES ────────────────────────────────── */
+    .services-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
     }
 
-    .contact-stack {
+    .svc {
+      padding: 1.4rem 0;
+      border-top: 1px solid var(--line);
       display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .svc:nth-child(odd)  { padding-right: 2.5rem; border-right: 1px solid var(--line); }
+    .svc:nth-child(even) { padding-left: 2.5rem; }
+
+    .svc-tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding-top: 0.25rem;
+    }
+
+    .svc h3 {
+      font-size: 0.98rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .svc p {
+      color: var(--muted);
+      font-size: 0.875rem;
+      line-height: 1.55;
+    }
+
+    /* ─── ABOUT + WHY ─────────────────────────────── */
+    .two-up {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .two-up > * + * { border-left: 1px solid var(--line); padding-left: 3.5rem; }
+    .two-up > *:first-child { padding-right: 3.5rem; }
+
+    .about-photo {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      border-radius: 3px;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-copy h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .about-copy ul {
+      margin-top: 0.75rem;
+      padding-left: 1rem;
+      color: var(--muted);
+      font-size: 0.875rem;
+      line-height: 2.1;
+    }
+
+    .why-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .why-item {
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .why-item:first-child { border-top: 1px solid var(--line); }
+
+    .why-item h3 {
+      font-size: 0.98rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .why-item p {
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+
+    /* ─── EXAMPLES ────────────────────────────────── */
+    .examples-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid var(--line);
+    }
+
+    .ex {
+      padding: 1.75rem;
+      border-right: 1px solid var(--line);
+    }
+
+    .ex:last-child { border-right: none; }
+
+    .ex-n {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--line);
+      line-height: 1;
+      margin-bottom: 0.85rem;
+    }
+
+    .ex h3 {
+      font-size: 0.98rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .ex p {
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.55;
+    }
+
+    /* ─── HOW IT WORKS ────────────────────────────── */
+    .steps-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+    }
+
+    .step-n {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.9rem;
+    }
+
+    .step-bar {
+      width: 1.75rem;
+      height: 2px;
+      background: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .step h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    /* ─── CONTACT ─────────────────────────────────── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .contact-grid > * + * { border-left: 1px solid var(--line); padding-left: 3.5rem; }
+    .contact-grid > *:first-child { padding-right: 3.5rem; }
+
+    .contact-side h3 {
+      font-size: 1.15rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .info-rows { display: flex; flex-direction: column; }
+
+    .info-row {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.875rem;
       gap: 1rem;
     }
 
-    .contact-box {
-      padding: 0.9rem;
-      border-radius: var(--radius-md);
+    .info-row:first-child { border-top: 1px solid var(--line); }
+
+    .info-lbl {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      padding-top: 0.1rem;
+    }
+
+    .info-val a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tag {
+      padding: 0.35rem 0.7rem;
       border: 1px solid var(--line);
-      background: var(--contact-bg);
+      font-size: 0.78rem;
+      border-radius: 2px;
+      color: var(--text);
     }
 
-    .contact-box strong {
-      display: block;
-      margin-bottom: 0.35rem;
-      font-weight: 700;
+    .contact-note {
+      margin-top: 1.5rem;
+      padding: 1rem 1.25rem;
+      background: var(--bg-alt);
+      border-left: 2px solid var(--accent);
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
     }
 
-    h2 {
-      font-size: 1.7rem;
-      letter-spacing: -0.02em;
-    }
-
+    /* ─── FOOTER ──────────────────────────────────── */
     footer {
+      padding: 2rem;
       text-align: center;
       color: var(--muted);
-      padding: 1rem 0 0.25rem;
-      font-size: 0.94rem;
+      font-size: 0.78rem;
     }
 
-    @media (max-width: 980px) {
-      .hero,
-      .grid-two,
-      .about-layout,
-      .contact-layout {
-        grid-template-columns: 1fr;
-      }
+    /* ─── RESPONSIVE ──────────────────────────────── */
+    @media (max-width: 780px) {
+      .nav-links { display: none; }
 
-      .services-grid,
-      .examples-grid,
-      .steps {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+      .hero { padding: 3rem 0 0; }
+      .hero h1 { font-size: 2.4rem; }
+      .hero-lower { grid-template-columns: 1fr; gap: 2rem; margin-top: 2.5rem; }
 
-      .why-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+      .section { padding: 3rem 0; }
 
-      .hero-card img,
-      .about-photo img {
-        min-height: 280px;
-      }
-    }
+      .services-list { grid-template-columns: 1fr; }
+      .svc:nth-child(odd)  { padding-right: 0; border-right: none; }
+      .svc:nth-child(even) { padding-left: 0; }
 
-    @media (max-width: 1100px) {
-      .intro-box {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
+      .two-up { grid-template-columns: 1fr; }
+      .two-up > * + * { border-left: none; padding-left: 0; border-top: 1px solid var(--line); padding-top: 2.5rem; margin-top: 2.5rem; }
+      .two-up > *:first-child { padding-right: 0; }
 
-    @media (max-width: 640px) {
-      .page-shell {
-        width: min(var(--max), calc(100% - 1rem));
-      }
+      .examples-row { grid-template-columns: 1fr; }
+      .ex { border-right: none; border-bottom: 1px solid var(--line); }
+      .ex:last-child { border-bottom: none; }
 
-      .topbar {
-        border-radius: 28px;
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 0.85rem 1rem;
-      }
+      .steps-row { grid-template-columns: 1fr; gap: 2rem; }
 
-      .brand {
-        margin-bottom: 0.35rem;
-      }
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-grid > * + * { border-left: none; padding-left: 0; border-top: 1px solid var(--line); padding-top: 2.5rem; margin-top: 2.5rem; }
+      .contact-grid > *:first-child { padding-right: 0; }
 
-      .topbar-actions {
-        width: 100%;
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.75rem;
-        justify-content: flex-start;
-        width: 100%;
-        padding-top: 0.75rem;
-        border-top: 1px solid var(--line);
-      }
-
-      .nav a {
-        width: 100%;
-        padding: 0.2rem 0;
-      }
-
-      .theme-toggle {
-        width: 100%;
-      }
-
-      .services-grid,
-      .examples-grid,
-      .steps,
-      .intro-box,
-      .help-list {
-        grid-template-columns: 1fr;
-      }
-
-      .why-grid {
-        grid-template-columns: 1fr;
-      }
-
-      h1 {
-        max-width: 100%;
-      }
+      .wrap { padding: 0 1.25rem; }
+      .nav-inner { padding: 0 1.25rem; }
     }
   </style>
 </head>
 <body>
-  <div class="page-shell">
-    <header class="topbar">
+
+  <!-- ─── NAV ─────────────────────────────────────── -->
+  <nav class="site-nav">
+    <div class="nav-inner">
       <div class="brand">
-        <strong>CortexBuilds</strong>
-        <span>Local computer help from Joliet Junior College students</span>
+        <span class="brand-name">CortexBuilds</span>
+        <span class="brand-sub">Local computer help · Joliet Junior College</span>
       </div>
-      <div class="topbar-actions">
-        <nav class="nav" aria-label="Main navigation">
-          <a href="#services">Services</a>
-          <a href="#about">About</a>
-          <a href="#process">How It Works</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <button class="theme-toggle" id="themeToggle" type="button" aria-live="polite">Theme: Auto</button>
+      <div class="nav-links" role="navigation" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#process">How It Works</a>
+        <a href="#contact">Contact</a>
       </div>
-    </header>
+      <button class="theme-btn" id="themeToggle" type="button" aria-live="polite">Theme: Auto</button>
+    </div>
+  </nav>
 
-    <main>
-      <section class="hero" aria-labelledby="hero-heading">
-        <div class="hero-copy">
-          <span class="eyebrow">Joliet Junior College student team</span>
-          <h1 id="hero-heading">Local PC help for Joliet, Shorewood, and Minooka.</h1>
-          <p class="lead">
-            We are a team of Joliet Junior College students helping with computer problems, upgrades, Wi-Fi issues, and device setup. We offer clear, dependable help for homes and small businesses in Joliet, Shorewood, Minooka, and nearby areas.
-          </p>
+  <!-- ─── HERO ─────────────────────────────────────── -->
+  <div class="hero">
+    <div class="wrap">
+      <p class="hero-label">Joliet · Shorewood · Minooka</p>
+      <h1>Local PC help that actually shows up.</h1>
 
-          <div class="intro-box">
-            <div class="intro-item">
-              <strong>Quick quotes</strong>
-              Clear pricing before work starts.
-            </div>
-            <div class="intro-item">
-              <strong>We come to you</strong>
-              On-site help for many local jobs.
-            </div>
-            <div class="intro-item">
-              <strong>Local team</strong>
-              Friendly help from students in your area.
-            </div>
-            <div class="intro-item">
-              <strong>Simple support</strong>
-              Easy to understand and no pressure.
-            </div>
+      <div class="hero-lower">
+        <p class="hero-desc">
+          We're a small team of Joliet Junior College students who help with computer problems, upgrades, Wi-Fi, and device setup. We come to you, keep things simple, and tell you upfront what it'll cost.
+        </p>
+
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <strong>Quick quotes</strong>
+            <span>Clear pricing before work starts</span>
           </div>
-
-          <div class="hero-actions">
-            <a class="button" href="#contact">Contact Us</a>
-            <a class="button-secondary" href="#services">See Services</a>
+          <div class="hero-meta-item">
+            <strong>We come to you</strong>
+            <span>On-site help for most jobs</span>
+          </div>
+          <div class="hero-meta-item">
+            <strong>Local team</strong>
+            <span>Students in your neighborhood</span>
+          </div>
+          <div class="hero-meta-item">
+            <strong>No pressure</strong>
+            <span>Honest advice, that's it</span>
           </div>
         </div>
+      </div>
 
-        <div class="hero-card">
-          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="Placeholder stock image of a desktop PC setup">
+      <div class="hero-actions">
+        <a class="btn" href="#contact">Get in touch</a>
+        <a class="btn-ghost" href="#services">See what we do →</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ─── SERVICES ───────────────────────────────── -->
+    <section class="section" id="services">
+      <div class="wrap">
+        <div class="section-hd">
+          <span class="section-n">01 / Services</span>
+          <h2>What we can help with</h2>
         </div>
-      </section>
 
-      <section id="services">
-        <div class="section-title">
+        <div class="services-list">
+          <div class="svc">
+            <span class="svc-tag">Repair</span>
+            <div>
+              <h3>PC troubleshooting and repair</h3>
+              <p>Slow, freezing, crashing, or just not working right — we can take a look and fix it.</p>
+            </div>
+          </div>
+          <div class="svc">
+            <span class="svc-tag">Builds</span>
+            <div>
+              <h3>Custom PC builds</h3>
+              <p>We'll help pick parts, put it together, and get it ready to use.</p>
+            </div>
+          </div>
+          <div class="svc">
+            <span class="svc-tag">Upgrades</span>
+            <div>
+              <h3>Hardware upgrades</h3>
+              <p>More storage, more memory, a faster drive — we can help figure out what's worth it.</p>
+            </div>
+          </div>
+          <div class="svc">
+            <span class="svc-tag">Network</span>
+            <div>
+              <h3>Wi-Fi and home network help</h3>
+              <p>Slow Wi-Fi, a bad router, devices dropping out — we've seen it all.</p>
+            </div>
+          </div>
+          <div class="svc">
+            <span class="svc-tag">Cleanup</span>
+            <div>
+              <h3>Virus and malware removal</h3>
+              <p>Popups, strange behavior, something feels off — we can clean it up.</p>
+            </div>
+          </div>
+          <div class="svc">
+            <span class="svc-tag">Setup</span>
+            <div>
+              <h3>Data transfer and device setup</h3>
+              <p>Moving files, setting up a new PC, getting printers working — whatever's next.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── ABOUT + WHY ─────────────────────────────── -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="section-hd">
+          <span class="section-n">02 / About</span>
+          <h2>Who we are</h2>
+        </div>
+
+        <div class="two-up">
           <div>
-            <h2>Services</h2>
-          </div>
-          <p>
-            Straightforward help for common computer and home tech problems.
-          </p>
-        </div>
-
-        <div class="services-grid">
-          <article class="service-card">
-            <span>Repair</span>
-            <h3>PC troubleshooting and repair</h3>
-            <p>We can help when a computer is slow, freezing, crashing, or not working right.</p>
-          </article>
-          <article class="service-card">
-            <span>Builds</span>
-            <h3>Custom PC builds</h3>
-            <p>We can help pick parts, build a computer, and get it ready to use.</p>
-          </article>
-          <article class="service-card">
-            <span>Upgrades</span>
-            <h3>Hardware upgrades</h3>
-            <p>We can help with more storage, more memory, faster drives, and other useful upgrades.</p>
-          </article>
-          <article class="service-card">
-            <span>Network</span>
-            <h3>Wi-Fi and home network help</h3>
-            <p>We can help with slow Wi-Fi, router problems, and devices that keep disconnecting.</p>
-          </article>
-          <article class="service-card">
-            <span>Cleanup</span>
-            <h3>Virus and malware cleanup</h3>
-            <p>We can help clean up popups, strange behavior, and other signs of viruses or malware.</p>
-          </article>
-          <article class="service-card">
-            <span>Transfer</span>
-            <h3>Data transfer and device setup</h3>
-            <p>We can move files, set up printers, install programs, and get new devices ready.</p>
-          </article>
-        </div>
-      </section>
-
-      <div class="grid-two">
-        <section id="about">
-          <div class="section-title">
-          <div>
-            <h2>About Us</h2>
-          </div>
-          <p>Local help for Joliet, Shorewood, and Minooka from students who want to do good work and treat people fairly.</p>
-        </div>
-
-          <div class="about-layout">
             <div class="about-photo">
-              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="Placeholder stock image of a student working on a computer">
+              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="Student working on a computer">
             </div>
-            <div class="about-card">
-              <h3>Why people might choose us</h3>
+            <div class="about-copy">
+              <h3>Students doing good work in their own backyard</h3>
               <p>
-                We are a team of Joliet Junior College students offering tech help on the side. Our goal is to make things easier, explain things clearly, and provide help people can feel comfortable trusting.
+                We're a team from Joliet Junior College, doing tech help on the side. Our goal is to make things easier for people in Joliet, Shorewood, Minooka, and the surrounding area — not to upsell you on stuff you don't need.
               </p>
-              <ul class="clean">
-                <li>Local and easier to reach</li>
-                <li>Clear and simple explanations</li>
+              <ul>
+                <li>Local and easy to reach</li>
+                <li>Clear explanations, no jargon</li>
                 <li>Help for homes and small businesses</li>
                 <li>Honest advice and practical fixes</li>
               </ul>
             </div>
           </div>
-        </section>
 
-        <section>
-          <div class="section-title">
           <div>
-            <h2>Why Choose Us</h2>
+            <div class="section-hd" style="margin-bottom: 0;">
+              <h2 style="font-size:1.5rem;">Why people work with us</h2>
+            </div>
+            <div class="why-list" style="margin-top: 1rem;">
+              <div class="why-item">
+                <h3>You talk to us directly</h3>
+                <p>No support tickets. You reach out, we respond.</p>
+              </div>
+              <div class="why-item">
+                <h3>We'll tell you when it's not worth fixing</h3>
+                <p>If a repair doesn't make sense, we'll say so and explain why.</p>
+              </div>
+              <div class="why-item">
+                <h3>No pressure, no upsells</h3>
+                <p>We want to solve the problem, not talk you into a service plan.</p>
+              </div>
+            </div>
           </div>
-          <p>Simple reasons someone might feel comfortable reaching out.</p>
         </div>
-
-          <div class="why-grid">
-            <article class="why-card">
-              <h3>Friendly one-on-one support</h3>
-              <p>You can reach us directly and get straightforward help.</p>
-            </article>
-            <article class="why-card">
-              <h3>Honest recommendations</h3>
-              <p>If something is not worth fixing, we will say so.</p>
-            </article>
-            <article class="why-card">
-              <h3>Help without pressure</h3>
-              <p>We want to solve the problem, not talk you into things you do not need.</p>
-            </article>
-          </div>
-        </section>
       </div>
+    </section>
 
-      <section>
-        <div class="section-title">
-          <div>
-            <h2>Example Jobs</h2>
-          </div>
-          <p>A few examples of the kind of help we offer.</p>
+    <!-- ─── EXAMPLES ────────────────────────────────── -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-hd">
+          <span class="section-n">03 / Examples</span>
+          <h2>A few jobs we've done</h2>
         </div>
 
-        <div class="examples-grid">
-          <article class="example-card">
+        <div class="examples-row">
+          <div class="ex">
+            <div class="ex-n">01</div>
             <h3>Slow laptop cleanup</h3>
-            <p>Speeding up an older laptop and removing unwanted software.</p>
-          </article>
-          <article class="example-card">
+            <p>Sped up an older laptop, removed junk software, and got it running like normal again.</p>
+          </div>
+          <div class="ex">
+            <div class="ex-n">02</div>
             <h3>New PC setup</h3>
-            <p>Setting up a new computer, moving files, and installing basic programs.</p>
-          </article>
-          <article class="example-card">
-            <h3>Router and Wi-Fi fixes</h3>
-            <p>Helping improve Wi-Fi so home internet works better and more reliably.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="process">
-        <div class="section-title">
-          <div>
-            <h2>How It Works</h2>
+            <p>Set up a new computer from scratch, moved over all the files, and installed the basics.</p>
           </div>
-          <p>Three simple steps.</p>
-        </div>
-
-        <div class="steps">
-          <article class="step">
-            <div class="step-number">1</div>
-            <h3>Tell me the problem</h3>
-            <p>Send a message and explain what is going wrong.</p>
-          </article>
-          <article class="step">
-            <div class="step-number">2</div>
-            <h3>We look at the issue</h3>
-            <p>We will explain what we think is wrong and what help makes sense.</p>
-          </article>
-          <article class="step">
-            <div class="step-number">3</div>
-            <h3>We set up a time</h3>
-            <p>We can find a time for local help, on-site support, or the next step.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="contact">
-        <div class="section-title">
-          <div>
-            <h2>Contact Us</h2>
+          <div class="ex">
+            <div class="ex-n">03</div>
+            <h3>Router and Wi-Fi fix</h3>
+            <p>Tracked down what was killing the Wi-Fi and got the whole house connected reliably.</p>
           </div>
-          <p>Placeholder contact information for now.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── HOW IT WORKS ─────────────────────────────── -->
+    <section class="section" id="process">
+      <div class="wrap">
+        <div class="section-hd">
+          <span class="section-n">04 / Process</span>
+          <h2>How it works</h2>
         </div>
 
-        <div class="contact-layout">
-          <div class="contact-card">
+        <div class="steps-row">
+          <div class="step">
+            <div class="step-n">Step 01</div>
+            <div class="step-bar"></div>
+            <h3>Tell us what's wrong</h3>
+            <p>Send a message with what's going on. No need to have it figured out — just describe it.</p>
+          </div>
+          <div class="step">
+            <div class="step-n">Step 02</div>
+            <div class="step-bar"></div>
+            <h3>We take a look</h3>
+            <p>We'll explain what we think the problem is and what kind of help actually makes sense.</p>
+          </div>
+          <div class="step">
+            <div class="step-n">Step 03</div>
+            <div class="step-bar"></div>
+            <h3>We set something up</h3>
+            <p>If it looks like a good fit, we'll find a time to come by or figure out the next step.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CONTACT ──────────────────────────────────── -->
+    <section class="section" id="contact">
+      <div class="wrap">
+        <div class="section-hd">
+          <span class="section-n">05 / Contact</span>
+          <h2>Get in touch</h2>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-side">
             <h3>Reach out</h3>
-            <p>If you need help with a computer or home tech problem, contact us.</p>
-
-            <div class="contact-stack" style="margin-top: 1rem;">
-              <div class="contact-box">
-                <strong>Phone</strong>
-                <a href="tel:555-123-4567">(555) 123-4567</a>
+            <div class="info-rows">
+              <div class="info-row">
+                <span class="info-lbl">Phone</span>
+                <span class="info-val"><a href="tel:555-123-4567">(555) 123-4567</a></span>
               </div>
-              <div class="contact-box">
-                <strong>Email</strong>
-                <a href="mailto:jaydenpchelp@example.com">jaydenpchelp@example.com</a>
+              <div class="info-row">
+                <span class="info-lbl">Email</span>
+                <span class="info-val"><a href="mailto:jaydenpchelp@example.com">jaydenpchelp@example.com</a></span>
               </div>
-              <div class="contact-box">
-                <strong>Service area</strong>
-                Joliet, Shorewood, Minooka, and nearby areas.
+              <div class="info-row">
+                <span class="info-lbl">Area</span>
+                <span class="info-val">Joliet, Shorewood, Minooka, and nearby</span>
               </div>
-              <div class="contact-box">
-                <strong>Pricing</strong>
-                $20 base on-site visit fee. Contact us for quotes on other services.
+              <div class="info-row">
+                <span class="info-lbl">Pricing</span>
+                <span class="info-val">$20 base on-site fee · other jobs quoted upfront</span>
               </div>
             </div>
           </div>
 
-          <div class="contact-card">
+          <div class="contact-side">
             <h3>What we can help with</h3>
-            <ul class="help-list">
-              <li>Slow computers</li>
-              <li>Upgrades</li>
-              <li>Wi-Fi issues</li>
-              <li>Custom builds</li>
-              <li>Virus cleanup</li>
-              <li>File transfers</li>
-              <li>New device setup</li>
-            </ul>
-            <div class="help-note">
-              Not sure which service fits your issue? Send us a message and we can help you figure out the next step.
+            <div class="tags">
+              <span class="tag">Slow computers</span>
+              <span class="tag">Upgrades</span>
+              <span class="tag">Wi-Fi issues</span>
+              <span class="tag">Custom builds</span>
+              <span class="tag">Virus cleanup</span>
+              <span class="tag">File transfers</span>
+              <span class="tag">Device setup</span>
+            </div>
+            <div class="contact-note">
+              Not sure if your problem is something we handle? Send a message anyway and we can help figure out if we're the right fit.
             </div>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
-    <footer>
-      Placeholder one-page site for Jayden's PC consulting business.
-    </footer>
-  </div>
+  </main>
+
+  <footer>
+    CortexBuilds · Joliet Junior College student team · Placeholder site for Jayden's PC consulting business
+  </footer>
+
   <script>
     (function () {
-      var storageKey = "cortexbuilds-theme";
+      var key = "cortexbuilds-theme";
       var themes = ["auto", "light", "dark"];
       var root = document.documentElement;
-      var toggle = document.getElementById("themeToggle");
-      var mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      var btn = document.getElementById("themeToggle");
+      var mq = window.matchMedia("(prefers-color-scheme: dark)");
 
-      function applyTheme(theme) {
-        if (theme === "auto") {
-          root.setAttribute("data-theme", "auto");
-        } else {
-          root.setAttribute("data-theme", theme);
-        }
-
-        if (toggle) {
-          var label = theme.charAt(0).toUpperCase() + theme.slice(1);
-          toggle.textContent = "Theme: " + label;
-          toggle.setAttribute("aria-label", "Theme: " + label);
-        }
+      function apply(theme) {
+        root.setAttribute("data-theme", theme);
+        if (btn) btn.textContent = "Theme: " + theme.charAt(0).toUpperCase() + theme.slice(1);
       }
 
-      function getSavedTheme() {
-        var saved = localStorage.getItem(storageKey);
-        return themes.indexOf(saved) >= 0 ? saved : "auto";
+      function get() {
+        var s = localStorage.getItem(key);
+        return themes.indexOf(s) >= 0 ? s : "auto";
       }
 
-      function setTheme(theme) {
-        localStorage.setItem(storageKey, theme);
-        applyTheme(theme);
-      }
+      apply(get());
 
-      applyTheme(getSavedTheme());
-
-      if (toggle) {
-        toggle.addEventListener("click", function () {
-          var current = getSavedTheme();
-          var next = themes[(themes.indexOf(current) + 1) % themes.length];
-          setTheme(next);
+      if (btn) {
+        btn.addEventListener("click", function () {
+          var next = themes[(themes.indexOf(get()) + 1) % themes.length];
+          localStorage.setItem(key, next);
+          apply(next);
         });
       }
 
-      mediaQuery.addEventListener("change", function () {
-        if (getSavedTheme() === "auto") {
-          applyTheme("auto");
-        }
+      mq.addEventListener("change", function () {
+        if (get() === "auto") apply("auto");
       });
     }());
   </script>
