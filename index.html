@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jayden's PC Help</title>
+  <style>
+    :root {
+      --panel: #ffffff;
+      --panel-soft: #f7f7f7;
+      --text: #1b1b1b;
+      --muted: #555555;
+      --line: #e4e4e4;
+      --accent: #1f5eff;
+      --accent-dark: #1748c7;
+      --accent-soft: #eef4ff;
+      --heading: #14213d;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --radius-sm: 10px;
+      --max: 980px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+      background: #f3f4f6;
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      border-radius: var(--radius-md);
+      object-fit: cover;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page-shell {
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 0.75rem 0 2rem;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 0.5rem 0 1rem;
+      padding: 0.8rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .brand strong {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 0.9rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible {
+      color: var(--accent-dark);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1rem;
+      align-items: stretch;
+      margin-bottom: 1rem;
+    }
+
+    .hero-copy,
+    .hero-card,
+    section {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      padding: clamp(1.25rem, 3vw, 2rem);
+      border-radius: var(--radius-lg);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-weight: 800;
+      line-height: 1.15;
+      margin: 0;
+      color: var(--heading);
+    }
+
+    h1 {
+      margin-top: 0.9rem;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      max-width: 13ch;
+    }
+
+    .lead {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 60ch;
+      margin: 0.9rem 0 1rem;
+      font-weight: 550;
+    }
+
+    .intro-box {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+
+    .intro-item {
+      padding: 0.85rem;
+      border-radius: var(--radius-sm);
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+    }
+
+    .intro-item strong {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .button,
+    .button-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem 1rem;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+    }
+
+    .button {
+      background: var(--accent);
+      color: #ffffff;
+      box-shadow: 0 10px 20px rgba(31, 94, 255, 0.18);
+    }
+
+    .button-secondary {
+      background: #ffffff;
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .button:hover,
+    .button-secondary:hover,
+    .button:focus-visible,
+    .button-secondary:focus-visible {
+      transform: translateY(-2px);
+    }
+
+    .hero-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      padding: 0.8rem;
+    }
+
+    .hero-card img {
+      height: 100%;
+      min-height: 320px;
+    }
+
+    .grid-two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    section {
+      padding: clamp(1.15rem, 2.5vw, 1.6rem);
+      border-radius: var(--radius-lg);
+    }
+
+    .section-title {
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .section-title p {
+      margin: 0.45rem 0 0;
+      color: var(--muted);
+      max-width: 42ch;
+      font-size: 0.96rem;
+      line-height: 1.45;
+      font-weight: 600;
+    }
+
+    .services-grid,
+    .why-grid,
+    .examples-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+      align-items: start;
+    }
+
+    .why-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .service-card,
+    .why-card,
+    .example-card,
+    .contact-card,
+    .about-card {
+      padding: 0.95rem;
+      border-radius: var(--radius-md);
+      background: #ffffff;
+      border: 1px solid var(--line);
+    }
+
+    .why-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      min-height: 185px;
+    }
+
+    .service-card h3,
+    .why-card h3,
+    .example-card h3,
+    .contact-card h3,
+    .about-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .service-card p,
+    .why-card p,
+    .example-card p,
+    .contact-card p,
+    .about-card p,
+    .about-card li {
+      color: var(--muted);
+      margin: 0;
+      font-weight: 550;
+    }
+
+    .service-card span {
+      display: inline-flex;
+      margin-bottom: 0.65rem;
+      padding: 0.3rem 0.55rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .about-layout,
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 1rem;
+    }
+
+    .about-photo {
+      min-height: 100%;
+    }
+
+    .about-photo img {
+      height: 100%;
+      min-height: 260px;
+    }
+
+    ul.clean {
+      padding-left: 1.1rem;
+      margin: 0.85rem 0 0;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .step {
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      background: #ffffff;
+      border: 1px solid var(--line);
+    }
+
+    .step-number {
+      display: inline-flex;
+      width: 2rem;
+      height: 2rem;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.8rem;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
+    }
+
+    .contact-layout {
+      align-items: stretch;
+    }
+
+    .contact-layout .contact-card:last-child {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 100%;
+    }
+
+    .help-list {
+      margin: 0.75rem 0 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+      font-weight: 550;
+    }
+
+    .help-list li + li {
+      margin-top: 0.35rem;
+    }
+
+    .contact-stack {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .contact-box {
+      padding: 0.9rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: var(--panel-soft);
+    }
+
+    .contact-box strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-weight: 700;
+    }
+
+    h2 {
+      font-size: 1.7rem;
+      letter-spacing: -0.02em;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 1rem 0 0.25rem;
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .grid-two,
+      .about-layout,
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid,
+      .examples-grid,
+      .steps,
+      .intro-box {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero-card img,
+      .about-photo img {
+        min-height: 280px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page-shell {
+        width: min(var(--max), calc(100% - 1rem));
+      }
+
+      .topbar {
+        border-radius: 28px;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+
+      .services-grid,
+      .examples-grid,
+      .steps,
+      .intro-box {
+        grid-template-columns: 1fr;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand">
+        <strong>Jayden's PC Help</strong>
+        <span>Local computer help from a college student team</span>
+      </div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#process">How It Works</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero-copy">
+          <span class="eyebrow">Local college student team</span>
+          <h1 id="hero-heading">PC help that is simple, local, and easy to understand.</h1>
+          <p class="lead">
+            We are a local college student team helping people with computer problems, upgrades, Wi-Fi issues, and device setup. We keep things simple, explain things clearly, and offer dependable help for homes and small businesses.
+          </p>
+
+          <div class="intro-box">
+            <div class="intro-item">
+              <strong>Quick quotes</strong>
+              Clear pricing before work starts.
+            </div>
+            <div class="intro-item">
+              <strong>We come to you</strong>
+              On-site help for many local jobs.
+            </div>
+            <div class="intro-item">
+              <strong>Local team</strong>
+              Friendly help from people nearby.
+            </div>
+            <div class="intro-item">
+              <strong>Simple support</strong>
+              Easy to understand and no pressure.
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="button" href="#contact">Contact Us</a>
+            <a class="button-secondary" href="#services">See Services</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="Placeholder stock image of a desktop PC setup">
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="section-title">
+          <div>
+            <h2>Services</h2>
+          </div>
+          <p>
+            Straightforward help for common computer and home tech problems.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <span>Repair</span>
+            <h3>PC troubleshooting and repair</h3>
+            <p>We can help when a computer is slow, freezing, crashing, or not working right.</p>
+          </article>
+          <article class="service-card">
+            <span>Builds</span>
+            <h3>Custom PC builds</h3>
+            <p>We can help pick parts, build a computer, and get it ready to use.</p>
+          </article>
+          <article class="service-card">
+            <span>Upgrades</span>
+            <h3>Hardware upgrades</h3>
+            <p>We can help with more storage, more memory, faster drives, and other useful upgrades.</p>
+          </article>
+          <article class="service-card">
+            <span>Network</span>
+            <h3>Wi-Fi and home network help</h3>
+            <p>We can help with slow Wi-Fi, router problems, and devices that keep disconnecting.</p>
+          </article>
+          <article class="service-card">
+            <span>Cleanup</span>
+            <h3>Virus and malware cleanup</h3>
+            <p>We can help clean up popups, strange behavior, and other signs of viruses or malware.</p>
+          </article>
+          <article class="service-card">
+            <span>Transfer</span>
+            <h3>Data transfer and device setup</h3>
+            <p>We can move files, set up printers, install programs, and get new devices ready.</p>
+          </article>
+        </div>
+      </section>
+
+      <div class="grid-two">
+        <section id="about">
+          <div class="section-title">
+          <div>
+            <h2>About Us</h2>
+          </div>
+          <p>Local help from a small team that wants to do good work and treat people fairly.</p>
+        </div>
+
+          <div class="about-layout">
+            <div class="about-photo">
+              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="Placeholder stock image of a student working on a computer">
+            </div>
+            <div class="about-card">
+              <h3>Why people might choose us</h3>
+              <p>
+                We are a local college student team offering tech help on the side. Our goal is to make things easier, explain things clearly, and provide help people can feel comfortable trusting.
+              </p>
+              <ul class="clean">
+                <li>Local and easier to reach</li>
+                <li>Clear and simple explanations</li>
+                <li>Help for homes and small businesses</li>
+                <li>Honest advice and practical fixes</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-title">
+          <div>
+            <h2>Why Choose Us</h2>
+          </div>
+          <p>Simple reasons someone might feel comfortable reaching out.</p>
+        </div>
+
+          <div class="why-grid">
+            <article class="why-card">
+              <h3>Friendly one-on-one support</h3>
+              <p>You can reach us directly and get straightforward help.</p>
+            </article>
+            <article class="why-card">
+              <h3>Honest recommendations</h3>
+              <p>If something is not worth fixing, we will say so.</p>
+            </article>
+            <article class="why-card">
+              <h3>Help without pressure</h3>
+              <p>We want to solve the problem, not talk you into things you do not need.</p>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <section>
+        <div class="section-title">
+          <div>
+            <h2>Example Jobs</h2>
+          </div>
+          <p>A few examples of the kind of help we offer.</p>
+        </div>
+
+        <div class="examples-grid">
+          <article class="example-card">
+            <h3>Slow laptop cleanup</h3>
+            <p>Speeding up an older laptop and removing unwanted software.</p>
+          </article>
+          <article class="example-card">
+            <h3>New PC setup</h3>
+            <p>Setting up a new computer, moving files, and installing basic programs.</p>
+          </article>
+          <article class="example-card">
+            <h3>Router and Wi-Fi fixes</h3>
+            <p>Helping improve Wi-Fi so home internet works better and more reliably.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="process">
+        <div class="section-title">
+          <div>
+            <h2>How It Works</h2>
+          </div>
+          <p>Three simple steps.</p>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <div class="step-number">1</div>
+            <h3>Tell me the problem</h3>
+            <p>Send a message and explain what is going wrong.</p>
+          </article>
+          <article class="step">
+            <div class="step-number">2</div>
+            <h3>We look at the issue</h3>
+            <p>We will explain what we think is wrong and what help makes sense.</p>
+          </article>
+          <article class="step">
+            <div class="step-number">3</div>
+            <h3>We set up a time</h3>
+            <p>We can find a time for local help, on-site support, or the next step.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="section-title">
+          <div>
+            <h2>Contact Us</h2>
+          </div>
+          <p>Placeholder contact information for now.</p>
+        </div>
+
+        <div class="contact-layout">
+          <div class="contact-card">
+            <h3>Reach out</h3>
+            <p>If you need help with a computer or home tech problem, contact us.</p>
+
+            <div class="contact-stack" style="margin-top: 1rem;">
+              <div class="contact-box">
+                <strong>Phone</strong>
+                <a href="tel:555-123-4567">(555) 123-4567</a>
+              </div>
+              <div class="contact-box">
+                <strong>Email</strong>
+                <a href="mailto:jaydenpchelp@example.com">jaydenpchelp@example.com</a>
+              </div>
+              <div class="contact-box">
+                <strong>Service area</strong>
+                Joliet, Channahon, and Minooka area.
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <h3>What I can help with</h3>
+            <ul class="help-list">
+              <li>Slow computers</li>
+              <li>Upgrades</li>
+              <li>Wi-Fi issues</li>
+              <li>Custom builds</li>
+              <li>Virus cleanup</li>
+              <li>File transfers</li>
+              <li>New device setup</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Placeholder one-page site for Jayden's PC consulting business.
+    </footer>
+  </div>
+</body>
+</html>
